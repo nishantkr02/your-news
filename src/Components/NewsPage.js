@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import NewsItem from './NewsItem' 
 import Weather from './Weather'
-import { json } from 'react-router-dom';
 function NewsPage() {
   
   const article = [
