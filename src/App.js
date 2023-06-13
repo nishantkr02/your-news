@@ -1,8 +1,10 @@
-
+import Navbar from "./Components/Navbar";
+import NewsPage from "./Components/NewsPage";
 function App() {
   return (
     <div className="App">
-     hi there
+    <Navbar/>
+    <NewsPage/>
     </div>
   );
 }

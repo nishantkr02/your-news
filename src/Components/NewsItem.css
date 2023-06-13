@@ -1,0 +1,17 @@
+
+#NewsItem{
+   margin-top: 2rem;
+    display: block;
+    padding: 1rem;
+  
+    height: calc(130vh/2);
+    width: 100%;
+    max-width:fit-content;
+    overflow:hidden;
+}
+img {
+  
+    width: 100%;
+     height: calc(60vh/2);
+  
+ }
