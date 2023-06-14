@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import NewsItem from './NewsItem' 
 import Weather from './Weather'
+import NewsCategory from './NewsCategory'
 function NewsPage() {
   
   const article = [
@@ -86,41 +87,39 @@ function NewsPage() {
 function errorHandler(error){
       console.log("Error Occured",error)
   }
-  
+
 const [newsArticles,setNewsArticles]=useState(article);
+const[nUrl,setnUrl]=useState("https://newsapi.org/v2/everything?domains=indianexpress.com&apiKey=9caa0ae2396b418eb60f5fc8c4bf3aba") ;
+
+function setUrl(categories){
+  var baseUrl =`https://newsapi.org/v2/top-headlines?country=in&category=${categories}&from=2023-05-31&sortBy=publishedAt&apiKey=9caa0ae2396b418eb60f5fc8c4bf3aba`  ;
+  setnUrl(baseUrl);
+  handleClick();
+}
       async function  handleClick(){
-        var apiUrl=`https://newsapi.org/v2/top-headlines?country=in&category=politics&from=2023-05-31&sortBy=publishedAt&apiKey=9caa0ae2396b418eb60f5fc8c4bf3aba`  ;
+        var apiUrl=nUrl;
         await fetch(apiUrl)
         .then((response)=>response.json() )
         .then((parsedData)=>{
           setNewsArticles(parsedData.articles)
         }).catch(errorHandler) ;
         }
-
-
-
   return (
-        <div  className='p-2'>
-          <button onClick={handleClick}>Fetch News</button>
-          <div className='row'>
-            <div className='d-sm-flex p-4  m-auto border  shadow-lg'>
-              
-                    <Weather title="Weather"/>
-                    <Weather title="Share Market /Quote of the day"/>
-            </div>
+        <div className='p-2'>
+          <div className='row p-4'>
+         
+            <NewsCategory setUrl={categories=>setUrl(categories)}/>
           </div>
-
-              <div className='row'>
-              {newsArticles.map((element)=>{
-                    return  <div className='col-lg-3 col-sm-6  col-md-4 col-6 shadow' key={element.url} >
-                          <NewsItem newsUrl={element.url} imgUrl={element.urlToImage} title={element.title} content={element.content} />
+        
+          <div className='row'>
+            {newsArticles.map((element)=>{
+                 return  <div className='col-lg-3 col-sm-6  col-md-4 col-6 shadow' key={element.url} >
+            <NewsItem newsUrl={element.url} imgUrl={element.urlToImage} title={element.title} content={element.content} />
                         
-                    </div>
-                      })}
-                      
-                      </div>
+            </div>})}
+            </div>
                     
-                  </div>
+            </div>
               
             
           
