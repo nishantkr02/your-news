@@ -12,39 +12,66 @@ function errorHandler(error){
   }
 
 const [newsArticles,setNewsArticles]=useState(article);
-const[nUrl,setnUrl]=useState("https://newsapi.org/v2/everything?domains=indianexpress.com&apiKey=7545aaa1301f45549b2efb10cbfa01a6") ;
+const[nUrl,setnUrl]=useState("https://newsapi.org/v2/top-headlines?country=in&apiKey=7545aaa1301f45549b2efb10cbfa01a6&page2") ;
+const[page,SetPage]=useState(1);
 
+async function  handleClick(){
+  var apiUrl=nUrl;
+  await fetch(apiUrl)
+  .then((response)=>response.json() )
+  .then((parsedData)=>{
+    setNewsArticles(parsedData.articles)
+  }).catch(errorHandler) ;
+  }
 function setUrl(categories){
   var baseUrl =`https://newsapi.org/v2/top-headlines?country=in&category=${categories}&from=2023-05-31&sortBy=publishedAt&apiKey=7545aaa1301f45549b2efb10cbfa01a6`  ;
   setnUrl(baseUrl);
   handleClick();
 }
-      async function  handleClick(){
-        var apiUrl=nUrl;
-        await fetch(apiUrl)
-        .then((response)=>response.json() )
-        .then((parsedData)=>{
-          setNewsArticles(parsedData.articles)
-        }).catch(errorHandler) ;
-        }
+function setSearch(sKey){
+  var baseUrl =`https://newsapi.org/v2/everything?q=${sKey}&from=2023-05-15&sortBy=publishedAt&apiKey=7545aaa1301f45549b2efb10cbfa01a6`  ;
+  setnUrl(baseUrl);
+  handleClick();
+}
+
+const handleNext=()=>{
+SetPage((page)=>page+1);
+var nextPage =`${nUrl}+&page=${page}`;
+setnUrl(nextPage);
+handleClick();
+}
+const handlePrev=()=>{
+  SetPage((page)=>page-1);
+  var PrevPage =`${nUrl}+&page=${page}`;
+setnUrl(page);
+handleClick();
+}
+
+
   return (
         <div className='p-2'>
           <div className='row p-4'>
          
-            <NewsCategory setUrl={categories=>setUrl(categories)}/>
+            <NewsCategory 
+            setUrl={categories=>setUrl(categories)}
+            setSearch={sKey=>setSearch(sKey)}
+            />
           </div>
         
           <div className='row'>
             {newsArticles.map((element)=>{
-                 return  <div className='col-lg-3 col-sm-6  col-md-4 col-6 shadow' key={element.url} >
-            <NewsItem newsUrl={element.url} imgUrl={!(element.urlToImage)?"https://ichef.bbci.co.uk/images/ic/1200x675/p01lcfqx.jpg":(element.urlToImage)}  title={element.title} content={element.content} />
-                        
-            </div>})}
+                 return  <div className='col-lg-3 col-sm-6  col-md-6 col-6 shadow' key={element.url} >
+                      <NewsItem newsUrl={element.url}
+                      imgUrl={!(element.urlToImage)?"https://ichef.bbci.co.uk/images/ic/1200x675/p01lcfqx.jpg":(element.urlToImage)} 
+                        title={element.title}
+                        content={element.content} />
+                                  
+                      </div>})}
             </div>
             <div className='d-flex justify-content-between p-2 my-3 shadow'>
            
-            <button className='btn btn-secondary'> &larr; Previous</button>
-            <button className='btn btn-secondary'>Next &rarr;</button>
+            <button disabled={page<=1} className='btn btn-secondary'onClick={handlePrev}> &larr; Previous</button>
+            <button className='btn btn-secondary' onClick={handleNext}>Next &rarr;</button>
             </div>
                     
             </div>

@@ -7,7 +7,7 @@
     height: calc(130vh/2);
     width: 100%;
     max-width:fit-content;
-    overflow:hidden;
+    overflow:scroll;
 }
 img {
   
@@ -19,7 +19,7 @@ img {
     width:100%;
     height:120px;
     display:block;
-    overflow:hidden;
+    overflow:scroll;
 
  }
  #heading p {

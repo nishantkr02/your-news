@@ -1,6 +1,16 @@
-import React from 'react'
+import React, { useState } from 'react'
+import {handleClick} from "./NewsPage"
 
-function NewsCategory({setUrl}) {
+function NewsCategory({setUrl,setSearch}) {
+  const [sk,SetSk]=useState("");
+  const updateKey =(evt)=>{
+      const updatedKey=evt.target.value;
+
+      SetSk(updatedKey);
+
+   
+
+  }
   return (
     <div className='container-fluid shadow p-2'>
       <nav className="navbar navbar-expand-lg navbar-light bg-light shadow  " >
@@ -31,10 +41,17 @@ function NewsCategory({setUrl}) {
               <button className='btn'onClick={()=>setUrl("world")}>World</button>
             </li> 
             </ul>
-            <form className="d-flex">
-              <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
-              <button className="btn btn-outline-success" type="submit">Search</button>
-            </form>
+            <div className="d-flex">
+              <input 
+              className="form-control me-2" 
+              type="text" placeholder="Search Your News"
+               aria-label="Search"
+               value={sk}
+               onChange={updateKey}
+               />
+              <button className="btn btn-outline-success" 
+              onClick={()=>setSearch(sk)} >Search</button>
+            </div>
           </div>
   
 </nav>
