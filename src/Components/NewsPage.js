@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import NewsItem from './NewsItem' 
-import Weather from './Weather'
 import NewsCategory from './NewsCategory'
 function NewsPage() {
   
