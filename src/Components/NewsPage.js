@@ -43,7 +43,7 @@ handleClick();
 const handlePrev=()=>{
   SetPage((page)=>page-1);
   var PrevPage =`${nUrl}+&page=${page}`;
-setnUrl(page);
+setnUrl(PrevPage);
 handleClick();
 }
 

@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import {handleClick} from "./NewsPage"
+
 
 function NewsCategory({setUrl,setSearch}) {
   const [sk,SetSk]=useState("");
