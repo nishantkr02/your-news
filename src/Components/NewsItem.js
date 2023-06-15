@@ -6,9 +6,12 @@ function NewsItem(props) {
                 <div className="card w-100 " id="NewsItem" >
                 <img src={props.imgUrl} className="card-img-top" alt="News Item"/>
                 <div className="card-body">
-                <h5 className="card-title">{props.title}</h5>
-                <p className="card-text">{props.content}</p>
-                <a href={props.newsUrl} className="btn btn-success">Go somewhere</a>
+                  <div className="shadow-sm" id="heading">
+                <p className="p-2 my-2">{props.title}</p>
+                </div>
+                <div className='d-flex justify-content-center my-2'>
+                <a href={props.newsUrl} className="btn btn-success m-auto  p-1">Read Full Story</a>
+                </div>
                 </div>
             
                 </div>
