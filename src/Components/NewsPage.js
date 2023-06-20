@@ -25,13 +25,14 @@ async function  componentDidMount(){
 function setUrl(categories){
   var baseUrl =`https://newsapi.org/v2/top-headlines?country=in&category=${categories}&from=2023-05-31&sortBy=publishedAt&apiKey=7545aaa1301f45549b2efb10cbfa01a6`  ;
   setnUrl(baseUrl);
-  console.log("insidesetUrl"+"nUrl => "+nUrl);
+  componentDidMount()
+  //console.log("insidesetUrl"+"nUrl => "+nUrl);
 
 }
 function setSearch(sKey){
   var baseUrl =`https://newsapi.org/v2/everything?q=${sKey}&from=2023-05-15&sortBy=publishedAt&apiKey=7545aaa1301f45549b2efb10cbfa01a6`  ;
   setnUrl(baseUrl);
-  console.log("insidesetSearch"+"nUrl => "+nUrl);
+  //console.log("insidesetSearch"+"nUrl => "+nUrl);
  
 }
 
