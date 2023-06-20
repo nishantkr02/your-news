@@ -1,25 +1,26 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 function Navbar() {
   return (
     <div className='container-fluid shadow p-2'>
-      <nav className="navbar navbar-expand-lg navbar-dark bg-dark shadow  " >
-          <a className="navbar-brand text-primary h2 bold" href="/NewsPage">YourNews</a>
-          <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span className="navbar-toggler-icon"></span>
-          </button>
-          <div className="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul className="navbar-nav mr-auto">
-              <li className="nav-item active">
-                <a className="nav-link active" aria-current="page" href="/NewsPage">Home</a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link" href="/NewsPage">Link</a>
-              </li>
-            </ul>
-          
+      <nav className="navbar navbar-expand-lg navbar-light bg-light shadow  " >
+      
+        <div className='col-md-8 col-lg-10'>
+          <a className="navbar-brand " href="/NewsPage">
+             <img src="newsLogo.jpeg" style={{width:"50%" ,height:"40%"}} className="d-inline-block align-top p-2 shadow-light " alt="logo" />
+          </a>
           </div>
-  
+          <div className='d-flex '>
+        
+              <div >
+                <Link className="nav-link active h5 text-secondary" aria-current="page" to="/">Home</Link>
+              </div>
+              <div >
+                <Link className="nav-link h4" to="/About">About</Link>
+              </div>
+            
+            </div>
 </nav>
 </div>
 
