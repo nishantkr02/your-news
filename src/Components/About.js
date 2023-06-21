@@ -2,72 +2,58 @@ import React from 'react'
 
 export default function About() {
   return (
-    <div className='col-md-6 m-auto shadow-lg p-2'>
-
-    <div className='container  my-3 p-3'>
-      <img  src='https://www.pushengage.com/wp-content/uploads/2022/02/Best-Website-Welcome-Message-Examples.png ' alt="Welcome" width="500" height="300" />
-    </div>
-<div className="accordion p-2 " id="accordionExample">
-
-  <div className="accordion-item text-center ">
+    <div className="accordion col-8 m-auto p-4" id="accordionPanelsStayOpenExample">
+  <div className="accordion-item">
     <h2 className="accordion-header" id="panelsStayOpen-headingOne">
-      <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="false" aria-controls="panelsStayOpen-collapseOne">
-       About the App 
+      <button className="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
+      NOTICE
       </button>
     </h2>
-    <div id="panelsStayOpen-collapseOne" className="accordion-collapse collapse " aria-labelledby="panelsStayOpen-headingOne">
+    <div id="panelsStayOpen-collapseOne" className="accordion-collapse collapse show" aria-labelledby="panelsStayOpen-headingOne">
       <div className="accordion-body">
-        <p  className='border shadow-lg m-auto p-2  text-secondary '>
-           
-
-
-            
-        </p>
-       
+      <p className='text-danger text-center  '><strong>As of Now , This App is Using the free ,Developers Plan of NewsApi .</strong><br/>
+      Unfortunately Newsapi revised its plan and it no longer allows us to make requests from the browser .<br/>
+      Which means to utilise the full features of the app on a deployment server , you either have to pay a shit load of money to them or just use the app on the developer Server ,i.e on Local host .
+      
+      </p>
       </div>
     </div>
   </div>
-
-  <div className="accordion-item text-center ">
-    <h2 className="accordion-header " id="panelsStayOpen-headingTwo">
-      <button className="accordion-button collapsed " type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo">
-        User Guide 
+  <div className="accordion-item">
+    <h2 className="accordion-header" id="panelsStayOpen-headingTwo">
+      <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo">
+       About the App
       </button>
     </h2>
     <div id="panelsStayOpen-collapseTwo" className="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingTwo">
       <div className="accordion-body">
-      <p  className='border shadow-lg m-auto p-2  text-secondary '>
-     
+      <p className='text-secondary fs-5'><strong> <br/>
+      This app lets the user to search and browse through the Curated list of news articles  .</strong>
+      <br/>The users can browse the different categories of news with just one click <br/> and  they can search for the desired news articles using the search box.
 
-
-          
-        </p>
+      
+      </p>
       </div>
     </div>
   </div>
-
-  <div className="accordion-item text-center ">
-    <h2 className="accordion-header" id="panelsStayOpen-headingThree">
-      <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false" aria-controls="panelsStayOpen-collapseThree">
-      A Message from the Developer
+  <div className="accordion-item text-center">
+    <h2 className="accordion-header " id="panelsStayOpen-headingThree">
+      <button className="accordion-button collapsed " type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false" aria-controls="panelsStayOpen-collapseThree">
+        Features to be implemented in the future .
       </button>
     </h2>
     <div id="panelsStayOpen-collapseThree" className="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingThree">
       <div className="accordion-body">
-        <p  className='text-secondary p-3 shadow-lg'>
-        <strong>Hi there .. ! <br/>
-        I am Nishant . I hope You will find this App Useful <br/><br/>
-         I am New to this world of the Web Developers ,
-        <br/> still got A Long Way to Go ,so many new things to Learn and <br/> A long list of apps to build  .<br/>
-        So If you have any suggestions , please do share it on my  
-        <a href='https://github.com/nishantkr02'> GitHub </a> Page .
-
-        </strong> 
-        </p>
+       <p className='text-secondary fs-5'><strong> I will be deplyoing this app for public use in the future.</strong>
+       <br/> Customization  and Filters will be the main Highlight .<br/>
+       <strong>Users will be able to choose  :</strong> the country ,the domain, the sources ,language ,specific time period ,etc etc.
+       <br/>
+       What the Heck !! , I will even throw in a weather section somewhere .
+       
+       </p>
       </div>
     </div>
   </div>
-</div>
 </div>
   )
 }

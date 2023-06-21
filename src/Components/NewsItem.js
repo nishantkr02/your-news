@@ -4,7 +4,7 @@ function NewsItem(props) {
   return (
     <div  >
                 <div className="card w-100 " id="NewsItem" >
-                <img src={props.imgUrl} className="card-img-top" alt="News Item"/>
+                <img src=  {!(props.imgUrl)?"placeholder.png":props.imgUrl} className="card-img-top" alt="News Item"/>
                 <div className="card-body">
                   <div className="shadow-sm" id="heading">
                 <p className=" my-2">{props.title}</p>

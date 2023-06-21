@@ -6,7 +6,11 @@ import About from "./Components/About";
 function App() {
   return (
     <div className="App">
+     
     <Navbar/>
+    
+    
+   
     <Routes>
     <Route exact path="/" element={<NewsPage/>} />
     <Route  exact path="/About" element={<About/>} />

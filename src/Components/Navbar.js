@@ -3,26 +3,28 @@ import { Link } from 'react-router-dom'
 
 function Navbar() {
   return (
-    <div className='container-fluid shadow p-2'>
-      <nav className="navbar navbar-expand-lg navbar-light bg-light shadow  " >
-      
-        <div className='col-md-8 col-lg-10'>
-          <a className="navbar-brand " href="/NewsPage">
+    
+    <nav className="navbar navbar-expand-lg navbar-light bg-light shadow">
+    <div className="col-md-8 col-sm-8 col-8" >
              <img src="newsLogo.jpeg" style={{width:"50%" ,height:"40%"}} className="d-inline-block align-top p-2 shadow-light " alt="logo" />
-          </a>
           </div>
-          <div className='d-flex '>
+    
+      <div className=" col d-flex flex-row bd-highlight justify-content-end">
+        <div className=" bd-highlight">
+          
+          <Link className="nav-link active fs-5  text-secondary " aria-current="page" to="/">Home</Link>
+        </div>
+        <div className="mx-3 bd-highlight">
+        <Link className="nav-link fs-5 " to="/About">About</Link>
+        </div>
         
-              <div >
-                <Link className="nav-link active h5 text-secondary" aria-current="page" to="/">Home</Link>
-              </div>
-              <div >
-                <Link className="nav-link h4" to="/About">About</Link>
-              </div>
-            
-            </div>
-</nav>
-</div>
+        
+      </div>
+      
+    
+  </nav>
+
+
 
   
   )
