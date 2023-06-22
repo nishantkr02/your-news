@@ -3,7 +3,7 @@ import React from 'react'
 export default function About() {
   return (
     <div className='container shadow my-4'>
-    <div className="accordion col-8 m-auto p-4" id="accordionPanelsStayOpenExample">
+    <div className="accordion col-10 m-auto p-4" id="accordionPanelsStayOpenExample">
   <div className="accordion-item">
     <h2 className="accordion-header" id="panelsStayOpen-headingOne">
       <button className="accordion-button fs-5" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">

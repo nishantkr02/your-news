@@ -26,10 +26,10 @@ useEffect(
     }).catch(errorHandler) ;
     }
     fetchArticles();
-},[nUrl]
+},[nUrl,page]
 );
 function setUrl(categories){
-  var baseUrl =`https://newsapi.org/v2/top-headlines?country=in&category=${categories}&from=2023-05-31&sortBy=publishedAt&apiKey=7545aaa1301f45549b2efb10cbfa01a6`  ;
+  var baseUrl =`https://newsapi.org/v2/top-headlines?country=in&category=${categories}&from=2023-05-31&sortBy=publishedAt&apiKey=7545aaa1301f45549b2efb10cbfa01a6&page=${page}`  ;
   setnUrl(baseUrl);
 
 
@@ -43,14 +43,17 @@ function setSearch(sKey){
 }
 
 const handleNext=()=>{
-SetPage((page)=>page+1);
-var nextPage =`${nUrl}+&page=${page}`;
-setnUrl(nextPage);
-
+  var npage =page+1 ;
+  SetPage(npage);
+  var nextU=nUrl.slice(0, 146);
+  console.log("nextU : : : "+nextU);
+  setnUrl(`${nextU}&page${page}`);
+console.log("page"+page);
+console.log(nUrl);
 }
 const handlePrev=()=>{
   SetPage((page)=>page-1);
-  var PrevPage =`${nUrl}+&page=${page}`;
+  var PrevPage =`${nUrl}+${page}`;
 setnUrl(PrevPage);
 
 }
