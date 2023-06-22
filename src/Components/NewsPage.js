@@ -69,7 +69,7 @@ setnUrl(PrevPage);
       
           <div className='row'>
             {newsArticles.map((element)=>{
-                 return  <div className='col-lg-3 col-sm-6  col-md-4 col-6 shadow' key={element.url} >
+                 return  <div className='col-lg-3 col-sm-6  col-md-4 col-6 ' key={element.url} >
                       <NewsItem newsUrl={element.url}
                       imgUrl={element.urlToImage} 
                         title={element.title}

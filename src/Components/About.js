@@ -2,6 +2,7 @@ import React from 'react'
 
 export default function About() {
   return (
+    <div className='container shadow my-4'>
     <div className="accordion col-8 m-auto p-4" id="accordionPanelsStayOpenExample">
   <div className="accordion-item">
     <h2 className="accordion-header" id="panelsStayOpen-headingOne">
@@ -54,6 +55,16 @@ export default function About() {
       </div>
     </div>
   </div>
+ 
+
+</div>
+<div className='container col-md-10 col-sm-8  border  p-4'> 
+<h3 className=' shadow-sm text-secondary p-4 fs-5'>Here is a demo Video of the App Working on the Local Server</h3>
+<div class=" p-4 m-auto ">
+<iframe  width="480" height="240" src="https://www.youtube.com/embed/ndTgiemd19U" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+  
+</div>
+</div>
 </div>
   )
 }
