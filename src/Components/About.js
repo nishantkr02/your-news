@@ -52,10 +52,10 @@ export default function About() {
        <br/> Customization  and Filters will be the main Highlight .<br/>
        <strong>Users will be able to choose  :</strong> the country ,the domain, the sources ,language ,specific time range,
        the sorting order etc etc.
-       <br/>
-       What the Heck !! , I will even throw in a weather section somewhere .<span className='fs-2'>🐱‍💻</span>
-       
-       </p>
+       I will even throw in a weather section somewhere .
+       <br/> <br/>Meanwhile,I am open to suggestions . <br/>
+       Here is a link of the app on my  <a className='link link-danger' href='https://github.com/nishantkr02/your-news'>Github Profile </a><br/>
+       Kindly Post your valuble suggestion and tips.</p>
       </div>
     </div>
   </div>
